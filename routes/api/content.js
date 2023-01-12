@@ -2,13 +2,12 @@ const express = require('express')
 const app = express()
 const router = express.Router()
 
-router.get('/youtuberList', (req, res) => {
-  db.collection('youtuber_list')
+router.get('/content', (req, res) => {
+  db.collection('contentServerData')
     .find({})
-    .sort({ number: 1 })
+    .sort({ number: -1 })
     .toArray((error, result) => {
       if (error) return console.log(error)
-
       res.send(result)
     })
 

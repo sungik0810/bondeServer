@@ -1,17 +1,9 @@
 const express = require('express')
-const app = express()
 const router = express.Router()
-
-router.get('/content', (req, res) => {
-  db.collection('contentServerData')
-    .find({})
-    .sort({ number: -1 })
-    .toArray((error, result) => {
-      if (error) return console.log(error)
-      res.send(result)
-    })
-
-  // res.send(db.collection("store_list").find());
+const Store = require('../../models/StoreModel')
+router.get('/content', async (req, res) => {
+  const stores = await Store.find().sort({ dataNumber: 1 })
+  res.json(stores)
 })
 
 module.exports = router

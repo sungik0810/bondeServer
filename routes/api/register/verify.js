@@ -10,7 +10,7 @@ require('dotenv').config()
 const SENS_SERVICEID = process.env.SENS_SERVICEID
 
 router.post('/verify', async (req, res) => {
-  const userPhoneNum = req.body.phoneNum.value.slice(1, 11)
+  const userPhoneNum = req.body.phoneNum.value.slice(0, 11)
   const userOuthInputNum = req.body.phoneOuthNum.value
   console.log('userPhoneNum', userPhoneNum)
   console.log(Cache.get(userPhoneNum))

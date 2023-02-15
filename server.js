@@ -4,6 +4,7 @@ const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const Cache = require('memory-cache')
 const { verifyItem } = require('./controllers/util')
+
 app.use(express.json())
 //lib config
 dotenv.config()
@@ -32,12 +33,14 @@ mongoose
     app.use('/api', require('./routes/api/content'))
     app.use('/api', require('./routes/api/channel'))
     app.use('/api', require('./routes/api/update'))
+    app.use('/api', require('./routes/api/review'))
     app.use('/register', require('./routes/api/register/send'))
     app.use('/register', require('./routes/api/register/verify'))
     app.use('/register', require('./routes/api/register/emailDuplication'))
     app.use('/register', require('./routes/api/Register/nickNameDuplication'))
     app.use('/register', require('./routes/api/Register/registerSubmit'))
     app.use('/auth', require('./routes/api/auth/login'))
+    app.use('/auth', require('./routes/api/auth/jwtcheck'))
   })
   .catch((err) => {
     console.log(err)

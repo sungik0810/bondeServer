@@ -15,4 +15,7 @@ module.exports = {
     serviceId: required('SENS_SERVICEID'),
     callNumber: required('SENS_CALLNUMBER'),
   },
+  jwtConfig: {
+    JWT_PRIVATE_KEY: required('JWT_PRIVATE_KEY'),
+  },
 }

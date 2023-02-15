@@ -11,11 +11,12 @@ function createRandomNum() {
 module.exports = {
   sendVerificationSMS: async (req, res) => {
     try {
-      const nationNum = req.body.nationNum.nation
+      // const nationNum = req.body.nationNum.nation
+      const nationNum = '+82'
       const phoneNum = req.body.phoneNum.value
       const deviceId = req.body.deviceId
-      const userPhoneNum = phoneNum.slice(1, 11)
-
+      // const userPhoneNum = phoneNum.slice(1, 11)
+      const userPhoneNum = phoneNum
       const verificationCode = createRandomNum()
       const date = Date.now().toString()
 

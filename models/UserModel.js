@@ -9,6 +9,7 @@ const UserSchema = new mongoose.Schema(
     nickName: { type: String, required: true },
     birth: { type: String, required: true },
     gender: { type: String, required: true },
+    refreshToken: { type: String, requred: true },
   },
   { timestamps: true }
 )

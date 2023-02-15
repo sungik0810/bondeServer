@@ -7,6 +7,7 @@ const Cache = require('memory-cache')
 router.post('/send', async (req, res) => {
   const userPhoneNum = req.body.phoneNum.value
   const userPhoneNumFront = userPhoneNum.slice(0, 3)
+  console.log(userPhoneNum)
   console.log(typeof userPhoneNumFront)
   const deviceId = req.body.deviceId
 

@@ -19,6 +19,7 @@ const StoreSchema = new mongoose.Schema(
     link: { type: String, required: true },
     title: { type: String, required: true },
     onAir: { type: String, required: true },
+    review: { type: Array, required: false },
   },
   { timestamps: true }
 )

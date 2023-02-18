@@ -12,6 +12,17 @@ async function hashPassword(password) {
 }
 
 router.post('/submit', async (req, res) => {
+  const KST_OFFSET = 9 * 60 * 60 * 1000
+  const kstNow = new Date(Date.now() + KST_OFFSET)
+  const year = kstNow.getUTCFullYear().toString()
+  const month = (kstNow.getUTCMonth() + 1).toString().padStart(2, '0')
+  const date = kstNow.getUTCDate().toString().padStart(2, '0')
+  const hour = kstNow.getUTCHours().toString().padStart(2, '0')
+  const minute = kstNow.getUTCMinutes().toString().padStart(2, '0')
+  const postDate = `${year}-${month}-${date}`
+  const postTime = `${hour}:${minute}`
+  const userIpAddress =
+    req.headers['x-forwarded-for'] || req.connection.remoteAddress
   const JWT_PRIVATE_KEY = jwtConfig.JWT_PRIVATE_KEY
   const userTOS = req.body.TOS
   const userEmail = req.body.email
@@ -21,6 +32,8 @@ router.post('/submit', async (req, res) => {
   const userNickName = req.body.nickName
   const userBirth = req.body.birth
   const userGender = req.body.gender
+  const logTextSuccess = `POST | register/submit |${postDate} ${postTime} / userIp:${userIpAddress} userEmail:${userEmail} register : Success`
+  const logTextFail = `POST | register/submit |${postDate} ${postTime} / userIp:${userIpAddress} userEmail:${userEmail} register : Fail`
   const token = jwt.sign(
     { data: { email: userEmail, name: userName, nickName: userNickName } },
     JWT_PRIVATE_KEY,
@@ -42,9 +55,11 @@ router.post('/submit', async (req, res) => {
   })
     .save()
     .then((result) => {
+      logger.info(logTextSuccess)
       return res.json('success')
     })
     .catch((err) => {
+      logger.info(logTextFail)
       return res.json('fail')
     })
 })

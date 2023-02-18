@@ -1647,6 +1647,7 @@ router.get('/update', (req, res) => {
       link: item.link,
       title: item.title,
       onAir: item.onAir,
+      review: [],
     }).save()
   })
   res.send('success')

@@ -39,6 +39,7 @@ router.post('/jwtcheck', async (req, res) => {
             JWT_PRIVATE_KEY,
             (err, decoded) => {
               if (err) {
+                console.log('err! jwt reAccessToken not make err!')
                 res.json({ signature: false })
               }
               if (decoded) {
@@ -55,6 +56,7 @@ router.post('/jwtcheck', async (req, res) => {
                     expiresIn: '1d',
                   }
                 )
+                console.log('jwt reAccessToken make!')
                 return res.json({
                   signature: true,
                   sendAccessToken: newAccessToken,

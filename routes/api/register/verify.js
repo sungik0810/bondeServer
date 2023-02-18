@@ -1,21 +1,28 @@
-const { default: axios } = require('axios')
 const express = require('express')
-const moment = require('moment')
-const { sens } = require('../../../config/config')
-const { verifyItem } = require('../../../controllers/util')
 const router = express.Router()
 const Cache = require('memory-cache')
-// router.use(express.json())
+const logger = require('../../../controllers/logger')
 require('dotenv').config()
-const SENS_SERVICEID = process.env.SENS_SERVICEID
 
 router.post('/verify', async (req, res) => {
+  const KST_OFFSET = 9 * 60 * 60 * 1000
+  const kstNow = new Date(Date.now() + KST_OFFSET)
+  const year = kstNow.getUTCFullYear().toString()
+  const month = (kstNow.getUTCMonth() + 1).toString().padStart(2, '0')
+  const date = kstNow.getUTCDate().toString().padStart(2, '0')
+  const hour = kstNow.getUTCHours().toString().padStart(2, '0')
+  const minute = kstNow.getUTCMinutes().toString().padStart(2, '0')
+  const postDate = `${year}-${month}-${date}`
+  const postTime = `${hour}:${minute}`
+
   const userPhoneNum = req.body.phoneNum.value.slice(0, 11)
   const userOuthInputNum = req.body.phoneOuthNum.value
-  console.log('userPhoneNum', userPhoneNum)
-  console.log(Cache.get(userPhoneNum))
   const currentOuthNum = Cache.get(userPhoneNum)
-  console.log(currentOuthNum)
+  const userIpAddress =
+    req.headers['x-forwarded-for'] || req.connection.remoteAddress
+  const logText = `POST | register/verify |${postDate} ${postTime} / userIp:${userIpAddress} userPhoneNum:${userPhoneNum} userOuthInputNum : ${userOuthInputNum} currentOuthNum:${currentOuthNum}`
+  logger.info(logText)
+
   if (currentOuthNum === null) {
     return res.json({ timeLimit: true })
   }

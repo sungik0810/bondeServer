@@ -1,0 +1,19 @@
+2023-02-18 18:02:39 [Winston 연습 어플리케이션] info: hi
+2023-02-18 18:02:56 [Winston 연습 어플리케이션] info: hi
+2023-02-18 18:07:49 [Winston 연습 어플리케이션] info: POST | review/photo |2023-02-18 18:07 / userIp:192.168.0.12:3000 dataNumber:1 userEmail:sungik0810@naver.com uuid:746c8c7c-4fe5-413e-a8f8-e98cfeee076f
+2023-02-18 18:30:09 [Winston 연습 어플리케이션] info: POST | auth/login |2023-02-18 18:30 / userIp:::ffff:192.168.0.12 userEmail:sungik0810@naver.com state : try
+2023-02-18 18:30:09 [Winston 연습 어플리케이션] info: POST | auth/login |2023-02-18 18:30 / userIp:::ffff:192.168.0.12 userEmail:sungik0810@naver.com state : failpassword wrong
+2023-02-18 18:30:56 [Winston 연습 어플리케이션] info: POST | auth/login |2023-02-18 18:30 / userIp:::ffff:192.168.0.12 userEmail:sungik0810@naver.comc state : try
+2023-02-18 18:30:56 [Winston 연습 어플리케이션] info: POST | auth/login |2023-02-18 18:30 / userIp:::ffff:192.168.0.12 userEmail:sungik0810@naver.comc state : fail issue : not found
+2023-02-18 18:31:16 [Winston 연습 어플리케이션] info: POST | auth/login |2023-02-18 18:31 / userIp:::ffff:192.168.0.12 userEmail:sungik0810@naver.com state : try
+2023-02-18 18:31:16 [Winston 연습 어플리케이션] info: POST | auth/login |2023-02-18 18:31 / userIp:::ffff:192.168.0.12 userEmail:sungik0810@naver.com state : success
+2023-02-18 18:36:45 [Winston 연습 어플리케이션] info: GET | review | 2023-02-18 18:36 / userIp:::ffff:192.168.0.12 dataNumber:2
+2023-02-18 18:53:24 [BONDE] error: GET | review | 2023-02-18 18:53 / userIp:::ffff:192.168.0.12 dataNumber:5
+2023-02-18 19:04:41 [BONDE] error: GET | review | 2023-02-18 19:04 / userIp:::ffff:192.168.0.12 dataNumber:5
+2023-02-18 19:05:37 [BONDE] info: POST | review/photo | 2023-02-18 19:05 / userIp:::ffff:192.168.0.12 dataNumber:5 userEmail:sungik0810@naver.com uuid:4244bb05-ed2d-4f38-883b-54e5ecf66b27
+2023-02-18 19:05:40 [BONDE] info: GET | review | 2023-02-18 19:05 / userIp:::ffff:192.168.0.12 dataNumber:5
+2023-02-18 19:05:52 [BONDE] info: POST | review/photo | 2023-02-18 19:05 / userIp:::ffff:192.168.0.12 dataNumber:5 userEmail:sungik0810@naver.com uuid:73ed3548-e734-4da9-82d8-c66f83db6930
+2023-02-18 19:06:46 [BONDE] info: POST | review/photo | 2023-02-18 19:06 / userIp:::ffff:192.168.0.12 dataNumber:5 userEmail:sungik0810@naver.com uuid:c9c1c177-3d31-4d93-87f9-56067789c61c
+2023-02-18 19:06:51 [BONDE] info: POST | review/photo | 2023-02-18 19:06 / userIp:::ffff:192.168.0.12 dataNumber:5 userEmail:sungik0810@naver.com uuid:70d83371-ea29-4c51-b154-109e56125058
+2023-02-18 19:06:54 [BONDE] info: POST | review/photo | 2023-02-18 19:06 / userIp:::ffff:192.168.0.12 dataNumber:5 userEmail:sungik0810@naver.com uuid:c9cc0998-5444-4351-9dae-55ecb4e1e61d
+2023-02-18 19:06:57 [BONDE] info: GET | review | 2023-02-18 19:06 / userIp:::ffff:192.168.0.12 dataNumber:5

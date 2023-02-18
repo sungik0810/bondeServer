@@ -1,21 +1,17 @@
 const CryptoJS = require('crypto-js')
 const axios = require('axios')
 const { sens } = require('../config/config')
-// const moment = require('moment')
 const Cache = require('memory-cache')
-// console.log(sens)
+
 function createRandomNum() {
   return String(Math.floor(100000 + Math.random() * 900000))
 }
-// const verifyItem = {}
 module.exports = {
   sendVerificationSMS: async (req, res) => {
     try {
-      // const nationNum = req.body.nationNum.nation
       const nationNum = '+82'
       const phoneNum = req.body.phoneNum.value
       const deviceId = req.body.deviceId
-      // const userPhoneNum = phoneNum.slice(1, 11)
       const userPhoneNum = phoneNum
       const verificationCode = createRandomNum()
       const date = Date.now().toString()

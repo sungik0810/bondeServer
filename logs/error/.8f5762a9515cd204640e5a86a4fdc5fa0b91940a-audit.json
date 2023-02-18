@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "D:\\project\\bondeServer\\bondeServer\\logs\\error\\.8f5762a9515cd204640e5a86a4fdc5fa0b91940a-audit.json",
+    "files": [
+        {
+            "date": 1676710842413,
+            "name": "D:\\project\\bondeServer\\bondeServer\\logs\\error\\2023-02-18.error.log",
+            "hash": "49fb548d963e0aa75af00fc025f069f76ae03513fecc75c599391da4f33fa377"
+        }
+    ],
+    "hashType": "sha256"
+}
